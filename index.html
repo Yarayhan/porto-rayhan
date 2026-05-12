@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayhan Ramadhan | Portofolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;800&family=Playfair+Display:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #ffffff; 
+            color: #000000; 
+            overflow-x: hidden;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        .number-label { font-size: 14px; font-weight: 400; color: #000; }
+        
+        /* Foto Hero & Kolaborasi */
+        .foto-produk {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+            cursor: zoom-in;
+        }
+
+        .foto-produk:hover {
+            transform: scale(1.02) translateY(-5px);
+            filter: grayscale(0%);
+        }
+
+        /* Gallery Visual Design */
+        .gallery-container {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .gallery-img {
+            transition: transform 0.8s ease, filter 0.5s ease;
+        }
+        
+        .gallery-container:hover .gallery-img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        /* Lightbox (Tampilan Foto Full saat di-klik) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+        }
+
+        /* Responsivitas Tambahan */
+        @media (max-width: 768px) {
+            .text-huge { font-size: 4rem; line-height: 1; }
+            .section-padding { padding-left: 1.5rem; padding-right: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Full Preview">
+        <p class="absolute bottom-10 text-[10px] tracking-widest uppercase font-bold text-gray-400">Klik di mana saja untuk menutup</p>
+    </div>
+
+    <section class="min-h-screen flex flex-col items-center justify-center p-6 md:p-10 relative">
+        <h1 class="text-6xl md:text-9xl font-extrabold tracking-tighter mb-10 uppercase text-center text-huge" data-aos="fade-up">PORTOFOLIO</h1>
+        
+        <div class="mb-10 w-full flex justify-center" data-aos="zoom-in" data-aos-delay="100">
+            <img src="wa9.jpeg" class="foto-produk grayscale shadow-2xl" onclick="openLightbox(this.src)">
+        </div>
+        
+        <h2 class="text-5xl md:text-8xl serif italic mb-4 text-center" data-aos="fade-up" data-aos-delay="200">Rayhan Ramadhan</h2>
+        <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-gray-400 text-center">UI/UX & Visual Designer</p>
+    </section>
+
+    <section class="py-20 md:py-32 px-6 md:px-10 max-w-5xl mx-auto relative">
+        <div class="flex justify-between items-start mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-none uppercase">SEDIKIT <br> TENTANG <br> SAYA</h2>
+            <span class="number-label">02</span>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6 text-sm md:text-base leading-relaxed text-gray-700" data-aos="fade-right">
+                <p>Saya adalah lulusan SMK Hangtuah 1 Jakarta jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang UI/UX dan desain grafis. Saya senang membuat desain antarmuka, poster, dan berbagai karya visual kreatif.</p>
+                <p>Saya memiliki kemampuan komunikasi dan kerja sama tim yang baik serta mampu beradaptasi dengan lingkungan kerja maupun pembelajaran baru.</p>
+            </div>
+            <div class="relative flex flex-col items-center md:items-end mt-10 md:mt-0">
+                <img src="wa5.jpeg" class="w-full md:w-64 h-44 object-cover grayscale rounded-lg shadow-lg mb-6 cursor-pointer hover:grayscale-0 transition" data-aos="fade-left" onclick="openLightbox(this.src)">
+                <img src="wa2.jpeg" class="hidden md:block w-60 h-40 object-cover grayscale rotate-6 absolute -bottom-10 left-0 shadow-2xl border-4 border-white rounded-sm cursor-pointer hover:rotate-0 transition" data-aos="fade-up" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-40 px-6 md:px-10 max-w-5xl mx-auto relative">
+        <div class="flex justify-between items-start mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-none uppercase">KEAHLIAN & <br> KEMAHIRAN</h2>
+            <span class="number-label">04</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="overflow-hidden rounded-2xl shadow-xl" data-aos="zoom-in">
+                <img src="wa10.jpeg" class="w-full grayscale hover:scale-105 transition duration-700 cursor-zoom-in" onclick="openLightbox(this.src)">
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-6 uppercase tracking-wider">UI/UX & Desain Visual</h3>
+                <ul class="space-y-4 text-sm md:text-base">
+                    <li class="flex items-center gap-3"> <span class="w-2 h-2 bg-black rounded-full"></span> Desain Antarmuka (UI)</li>
+                    <li class="flex items-center gap-3"> <span class="w-2 h-2 bg-black rounded-full"></span> Desain Poster Digital</li>
+                    <li class="flex items-center gap-3"> <span class="w-2 h-2 bg-black rounded-full"></span> Desain Website</li>
+                    <li class="flex items-center gap-3"> <span class="w-2 h-2 bg-black rounded-full"></span> Konten Media Sosial</li>
+                    <li class="flex items-center gap-3"> <span class="w-2 h-2 bg-black rounded-full"></span> Motion Poster</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 px-6 md:px-10 max-w-6xl mx-auto relative text-center">
+        <span class="number-label block mb-4">05</span>
+        <h2 class="text-5xl md:text-6xl serif italic mb-16 md:mb-24">Visual Design</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <div class="group space-y-4 text-left" data-aos="fade-up" onclick="openLightbox('satu.png')">
+                <div class="gallery-container shadow-lg">
+                    <img src="satu.png" class="gallery-img w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-bold text-sm uppercase">Naninu Guitar</h4>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest leading-relaxed">Poster promosi gitar dengan konsep visual modern.</p>
+            </div>
+            <div class="group space-y-4 text-left" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox('Desktop - 4.jpg')">
+                <div class="gallery-container shadow-lg">
+                    <img src="Desktop - 4.jpg" class="gallery-img w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-bold text-sm uppercase">Resepin</h4>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest leading-relaxed">Desain website makanan sederhana dan modern.</p>
+            </div>
+            <div class="group space-y-4 text-left" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('Instagram post - 1.png')">
+                <div class="gallery-container shadow-lg">
+                    <img src="Instagram post - 1.png" class="gallery-img w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-bold text-sm uppercase">Flower Bouquet</h4>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest leading-relaxed">Poster bouquet bunga dengan desain elegan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 px-6 md:px-10 max-w-5xl mx-auto relative bg-white">
+        <div class="flex justify-between items-start mb-10">
+            <div>
+                <p class="text-sm mb-4 font-bold uppercase tracking-widest">Rayhan Ramadhan</p>
+                <h2 class="text-5xl md:text-7xl font-extrabold leading-[0.8] uppercase">MARI <br> KOLABORASI</h2>
+            </div>
+            <span class="number-label">08</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mt-20 items-center">
+            <div class="space-y-6 text-lg md:text-xl serif italic">
+                <p>Jalan KaliBaru Barat 1, Jakarta Utara</p>
+                <div class="pt-6">
+                    <p class="not-italic serif text-2xl md:text-3xl font-bold">0821 2360 2574</p>
+                    <a href="mailto:rayhanramadhannn7@gmail.com" class="not-italic serif text-base md:text-lg underline hover:text-gray-400 transition block mt-2">
+                        rayhanramadhannn7@gmail.com
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center md:justify-end" data-aos="fade-up">
+                <img src="wa7.jpeg" class="foto-produk grayscale shadow-2xl" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-gray-100">
+        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-400">&copy; 2024 Rayhan Ramadhan</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi Animasi
+        AOS.init({ duration: 1000, once: true });
+
+        // Fungsi Lightbox (Klik Gambar Muncul Full)
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
